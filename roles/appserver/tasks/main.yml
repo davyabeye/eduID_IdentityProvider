@@ -2,12 +2,12 @@
 
 # 4.1. Java runtime environment: OpenJDK 7
 # Replace with Oracle Java 
-- name: Install OpenJDK 7
-  apt: name=openjdk-7-jdk update_cache=yes cache_valid_time=3600
+- name: Install OpenJDK 8
+  yum: name=java-1.8.0-openjdk state=present update_cache=yes cache_valid_time=3600
 
 # 4.2. Servlet container: Apache Tomcat 7
-- name: Install Tomcat 7
-  apt: name=tomcat{{ tomcat_version }} update_cache=yes cache_valid_time=3600
+- name: Install Tomcat 8
+  yum: name=tomcat{{ tomcat_version }} update_cache=yes cache_valid_time=3600
 
 - name: Copy Tomcat config file
   copy: > 

@@ -1,11 +1,11 @@
 # 3. Apache HTTP Server installation
 - name: Install apache2
-  apt: pkg=apache2 update_cache=yes cache_valid_time=3600
+  yum: name=httpd state=latest  update_cache=yes cache_valid_time=3600
 
 - name: Copy apache2 config file
   template: >
     src=templates/apache2.conf.j2
-    dest=/etc/apache2/sites-available/{{ fqdn }}.conf
+    dest=/etc/httpd/conf/{{ fqdn }}.conf
   notify: restart apache
 
 - name: Disable default configuration

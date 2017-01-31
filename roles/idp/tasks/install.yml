@@ -1,6 +1,6 @@
 # 1. Systems Requirememts
 - name: Install needed utility programs
-  apt: pkg={{ item }} update_cache=yes cache_valid_time=36000
+  yum: pkg={{ item }} update_cache=yes cache_valid_time=36000
   with_items:
     - ntp
     - unzip

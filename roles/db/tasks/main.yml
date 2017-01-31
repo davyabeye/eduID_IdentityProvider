@@ -2,9 +2,9 @@
 
 # 5.1. Installation
 - name: Install Postgres, Java Adapter and Psycog for postgresql_db module
-  apt: pkg={{ item }} update_cache=yes cache_valid_time=3600
+  yum: pkg={{ item }} update_cache=yes cache_valid_time=3600
   with_items:
-    - postgresql
+    - postgresql-server
     - libpostgresql-jdbc-java
     - python-psycopg2
 
