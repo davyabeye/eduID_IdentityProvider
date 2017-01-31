@@ -1,0 +1,13 @@
+exuni_idp ansible_ssh_host=idp.example.net
+
+[exuni]
+exuni_idp
+
+[exuni:vars]
+ansible_user=ubuntu
+
+[idp]
+exuni_idp
+
+[maliren:children]
+idp

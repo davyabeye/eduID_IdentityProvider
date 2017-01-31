@@ -1,0 +1,52 @@
+fqdn: idp.example.net
+entity_id: https://{{ fqdn }}/shibboleth
+
+idp_name: example.net
+idp_displayname: Identity Provider for the Example University
+idp_description: IdP for students and staff at the Example University
+idp_logo: logo.png 
+
+organisation_name: Example University
+organisation_url: https://example.net
+
+federation: eduID
+registration_authority: https://eduid.ubuntunet.net
+metadata_url: https://rr.example.net/metadata/federation/{{ federation }}/metadata.xml
+metadata_file: metadata.xml
+disregard_tsl_certificate: true
+
+ldap_url: ldap.example.net
+ldap_port: 389
+ldap_protocol: ldap
+
+support_first_name: Support
+support_last_name: Mail
+support_email: support@example.net
+admin_first_name: Admin
+admin_last_name: Mail
+admin_email: eduid@example.net
+technical_first_name: Technical
+technical_last_name: Mail
+technical_email: eduid@example.net
+
+service_providers:
+  -
+    name: DummySP
+    entity_id: https://sp.example.net/shibboleth
+    attributes:
+      - eduPersonPrincipalName
+      - mail
+      - cn
+      - sn
+      - givenName
+
+  -
+    name: AnotherSP
+    entity_id: https://example2.mw/shibboleth
+    attributes:
+      - mail
+      - eduPersonPrincipalName
+      - eduPersonEntitlement
+      - sn
+      - givenName
+
